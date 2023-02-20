@@ -1,0 +1,51 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : Syn4BitAdder.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:25
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/Syn4BitAdder.sch Syn4BitAdder.vf
+//Design Name: Syn4BitAdder
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Syn4BitAdder();
+
+   
+   
+   SynFA XLXI_1 (.a(), 
+                 .b(), 
+                 .cin(), 
+                 .clk(), 
+                 .cout(), 
+                 .sum());
+   SynFA XLXI_2 (.a(), 
+                 .b(), 
+                 .cin(), 
+                 .clk(), 
+                 .cout(), 
+                 .sum());
+   SynFA XLXI_3 (.a(), 
+                 .b(), 
+                 .cin(), 
+                 .clk(), 
+                 .cout(), 
+                 .sum());
+   SynFA XLXI_4 (.a(), 
+                 .b(), 
+                 .cin(), 
+                 .clk(), 
+                 .cout(), 
+                 .sum());
+endmodule

@@ -1,0 +1,52 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : mux_4to1_32bit.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:28
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/mux_4to1_32bit.sch mux_4to1_32bit.vf
+//Design Name: mux_4to1_32bit
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module mux_4to1_32bit(a, 
+                      b, 
+                      c, 
+                      d, 
+                      s, 
+                      o);
+
+    input [31:0] a;
+    input [31:0] b;
+    input [31:0] c;
+    input [31:0] d;
+    input [1:0] s;
+   output [31:0] o;
+   
+   wire [31:0] XLXN_9;
+   wire [31:0] XLXN_10;
+   
+   mux_32bits XLXI_1 (.a(a[31:0]), 
+                      .b(b[31:0]), 
+                      .s(s[0]), 
+                      .o(XLXN_9[31:0]));
+   mux_32bits XLXI_2 (.a(c[31:0]), 
+                      .b(d[31:0]), 
+                      .s(s[0]), 
+                      .o(XLXN_10[31:0]));
+   mux_32bits XLXI_3 (.a(XLXN_9[31:0]), 
+                      .b(XLXN_10[31:0]), 
+                      .s(s[1]), 
+                      .o(o[31:0]));
+endmodule

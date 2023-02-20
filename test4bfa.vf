@@ -1,0 +1,59 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : test4bfa.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:26
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/test4bfa.sch test4bfa.vf
+//Design Name: test4bfa
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module test4bfa(a, 
+                b, 
+                Cin, 
+                Cout, 
+                sum);
+
+    input [3:0] a;
+    input [3:0] b;
+    input Cin;
+   output Cout;
+   output [3:0] sum;
+   
+   wire co0;
+   wire co1;
+   wire co2;
+   
+   faddsch XLXI_1 (.A(a[0]), 
+                   .B(b[0]), 
+                   .Cin(Cin), 
+                   .Cout(co0), 
+                   .Sum(sum[0]));
+   faddsch XLXI_2 (.A(a[1]), 
+                   .B(b[1]), 
+                   .Cin(co0), 
+                   .Cout(co1), 
+                   .Sum(sum[1]));
+   faddsch XLXI_3 (.A(a[2]), 
+                   .B(b[2]), 
+                   .Cin(co1), 
+                   .Cout(co2), 
+                   .Sum(sum[2]));
+   faddsch XLXI_4 (.A(a[3]), 
+                   .B(b[3]), 
+                   .Cin(co2), 
+                   .Cout(Cout), 
+                   .Sum(sum[3]));
+endmodule

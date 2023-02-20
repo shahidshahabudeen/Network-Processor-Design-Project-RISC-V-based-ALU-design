@@ -1,0 +1,105 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : Syn8bit.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:25
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/Syn8bit.sch Syn8bit.vf
+//Design Name: Syn8bit
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module IFD8_HXILINX_Syn8bit(Q, C, D);
+
+   
+   output [7:0]       Q;
+
+   input 	      C;	
+   input  [7:0]       D;
+   
+   reg    [7:0]       Q;
+   
+   always @(posedge C)
+     begin
+          Q <= D;
+     end
+   
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module IFD_HXILINX_Syn8bit(Q, C, D);
+   
+   output             Q;
+
+   input 	      C;	
+   input              D;
+   
+   reg                Q;
+   
+   always @(posedge C)
+     begin
+          Q <= D;
+     end
+   
+   
+endmodule
+`timescale 1ns / 1ps
+
+module Syn8bit(a, 
+               b, 
+               cin, 
+               clk, 
+               cout, 
+               synSUM);
+
+    input [7:0] a;
+    input [7:0] b;
+    input cin;
+    input clk;
+   output cout;
+   output [7:0] synSUM;
+   
+   wire [7:0] XLXN_48;
+   wire [7:0] XLXN_54;
+   wire XLXN_55;
+   wire [7:0] XLXN_60;
+   wire XLXN_61;
+   
+   Add8bits XLXI_1 (.a(XLXN_54[7:0]), 
+                    .b(XLXN_48[7:0]), 
+                    .Cin(XLXN_55), 
+                    .Cout(XLXN_61), 
+                    .sum(XLXN_60[7:0]));
+   IFD8_HXILINX_Syn8bit XLXI_21 (.C(clk), 
+                                 .D(b[7:0]), 
+                                 .Q(XLXN_48[7:0]));
+   // synthesis attribute HU_SET of XLXI_21 is "XLXI_21_0"
+   IFD8_HXILINX_Syn8bit XLXI_23 (.C(clk), 
+                                 .D(a[7:0]), 
+                                 .Q(XLXN_54[7:0]));
+   // synthesis attribute HU_SET of XLXI_23 is "XLXI_23_1"
+   IFD_HXILINX_Syn8bit XLXI_24 (.C(clk), 
+                                .D(cin), 
+                                .Q(XLXN_55));
+   // synthesis attribute HU_SET of XLXI_24 is "XLXI_24_2"
+   IFD8_HXILINX_Syn8bit XLXI_25 (.C(clk), 
+                                 .D(XLXN_60[7:0]), 
+                                 .Q(synSUM[7:0]));
+   // synthesis attribute HU_SET of XLXI_25 is "XLXI_25_3"
+   IFD_HXILINX_Syn8bit XLXI_26 (.C(clk), 
+                                .D(XLXN_61), 
+                                .Q(cout));
+   // synthesis attribute HU_SET of XLXI_26 is "XLXI_26_4"
+endmodule

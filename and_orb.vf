@@ -1,0 +1,46 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : and_orb.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:27
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/and_orb.sch and_orb.vf
+//Design Name: and_orb
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module and_orb(a, 
+               and_orb, 
+               b, 
+               o);
+
+    input [31:0] a;
+    input and_orb;
+    input [31:0] b;
+   output [31:0] o;
+   
+   wire [31:0] XLXN_6;
+   wire [31:0] XLXN_7;
+   
+   mux_32bits XLXI_3 (.a(XLXN_6[31:0]), 
+                      .b(XLXN_7[31:0]), 
+                      .s(and_orb), 
+                      .o(o[31:0]));
+   or_32bitwise XLXI_4 (.a(a[31:0]), 
+                        .b(b[31:0]), 
+                        .o(XLXN_6[31:0]));
+   and_32bitw XLXI_5 (.a(a[31:0]), 
+                      .b(b[31:0]), 
+                      .o(XLXN_7[31:0]));
+endmodule

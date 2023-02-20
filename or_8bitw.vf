@@ -1,0 +1,56 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : or_8bitw.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:27
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/or_8bitw.sch or_8bitw.vf
+//Design Name: or_8bitw
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module or_8bitw(a, 
+                b, 
+                o);
+
+    input [7:0] a;
+    input [7:0] b;
+   output [7:0] o;
+   
+   
+   OR2 XLXI_1 (.I0(b[0]), 
+               .I1(a[0]), 
+               .O(o[0]));
+   OR2 XLXI_2 (.I0(b[1]), 
+               .I1(a[1]), 
+               .O(o[1]));
+   OR2 XLXI_3 (.I0(b[2]), 
+               .I1(a[2]), 
+               .O(o[2]));
+   OR2 XLXI_4 (.I0(b[3]), 
+               .I1(a[3]), 
+               .O(o[3]));
+   OR2 XLXI_5 (.I0(b[4]), 
+               .I1(a[4]), 
+               .O(o[4]));
+   OR2 XLXI_6 (.I0(b[5]), 
+               .I1(a[5]), 
+               .O(o[5]));
+   OR2 XLXI_7 (.I0(b[6]), 
+               .I1(a[6]), 
+               .O(o[6]));
+   OR2 XLXI_8 (.I0(b[7]), 
+               .I1(a[7]), 
+               .O(o[7]));
+endmodule

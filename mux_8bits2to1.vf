@@ -1,0 +1,96 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : mux_8bits2to1.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:26
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/mux_8bits2to1.sch mux_8bits2to1.vf
+//Design Name: mux_8bits2to1
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module M2_1_HXILINX_mux_8bits2to1 (O, D0, D1, S0);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  S0;
+
+   reg O;
+
+   always @ ( D0 or D1 or S0)
+   begin
+      case(S0)
+      1'b0 : O <= D0;
+      1'b1 : O <= D1;
+      endcase
+   end
+    
+endmodule
+`timescale 1ns / 1ps
+
+module mux_8bits2to1(a, 
+                     b, 
+                     s, 
+                     o);
+
+    input [7:0] a;
+    input [7:0] b;
+    input s;
+   output [7:0] o;
+   
+   
+   M2_1_HXILINX_mux_8bits2to1 XLXI_1 (.D0(a[0]), 
+                                      .D1(b[0]), 
+                                      .S0(s), 
+                                      .O(o[0]));
+   // synthesis attribute HU_SET of XLXI_1 is "XLXI_1_0"
+   M2_1_HXILINX_mux_8bits2to1 XLXI_2 (.D0(a[1]), 
+                                      .D1(b[1]), 
+                                      .S0(s), 
+                                      .O(o[1]));
+   // synthesis attribute HU_SET of XLXI_2 is "XLXI_2_1"
+   M2_1_HXILINX_mux_8bits2to1 XLXI_3 (.D0(a[2]), 
+                                      .D1(b[2]), 
+                                      .S0(s), 
+                                      .O(o[2]));
+   // synthesis attribute HU_SET of XLXI_3 is "XLXI_3_2"
+   M2_1_HXILINX_mux_8bits2to1 XLXI_4 (.D0(a[3]), 
+                                      .D1(b[3]), 
+                                      .S0(s), 
+                                      .O(o[3]));
+   // synthesis attribute HU_SET of XLXI_4 is "XLXI_4_3"
+   M2_1_HXILINX_mux_8bits2to1 XLXI_9 (.D0(a[4]), 
+                                      .D1(b[4]), 
+                                      .S0(s), 
+                                      .O(o[4]));
+   // synthesis attribute HU_SET of XLXI_9 is "XLXI_9_4"
+   M2_1_HXILINX_mux_8bits2to1 XLXI_10 (.D0(a[5]), 
+                                       .D1(b[5]), 
+                                       .S0(s), 
+                                       .O(o[5]));
+   // synthesis attribute HU_SET of XLXI_10 is "XLXI_10_5"
+   M2_1_HXILINX_mux_8bits2to1 XLXI_11 (.D0(a[6]), 
+                                       .D1(b[6]), 
+                                       .S0(s), 
+                                       .O(o[6]));
+   // synthesis attribute HU_SET of XLXI_11 is "XLXI_11_6"
+   M2_1_HXILINX_mux_8bits2to1 XLXI_12 (.D0(a[7]), 
+                                       .D1(b[7]), 
+                                       .S0(s), 
+                                       .O(o[7]));
+   // synthesis attribute HU_SET of XLXI_12 is "XLXI_12_7"
+endmodule

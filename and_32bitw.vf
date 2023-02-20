@@ -1,0 +1,44 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : and_32bitw.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:27
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/and_32bitw.sch and_32bitw.vf
+//Design Name: and_32bitw
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module and_32bitw(a, 
+                  b, 
+                  o);
+
+    input [31:0] a;
+    input [31:0] b;
+   output [31:0] o;
+   
+   
+   and_8bitw XLXI_1 (.a(a[7:0]), 
+                     .b(b[7:0]), 
+                     .o(o[7:0]));
+   and_8bitw XLXI_2 (.a(a[15:8]), 
+                     .b(b[15:8]), 
+                     .o(o[15:8]));
+   and_8bitw XLXI_3 (.a(a[23:16]), 
+                     .b(b[23:16]), 
+                     .o(o[23:16]));
+   and_8bitw XLXI_4 (.a(a[31:24]), 
+                     .b(b[31:24]), 
+                     .o(o[31:24]));
+endmodule

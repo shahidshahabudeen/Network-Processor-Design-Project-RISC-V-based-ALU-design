@@ -1,0 +1,39 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : shifter.vf
+// /___/   /\     Timestamp : 01/23/2023 02:03:55
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/shifter.sch shifter.vf
+//Design Name: shifter
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module shifter(a, 
+               cout, 
+               o);
+
+    input [31:0] a;
+   output cout;
+   output [31:0] o;
+   
+   wire XLXN_3;
+   
+   Adder32bit XLXI_1 (.a(a[31:0]), 
+                      .b(a[31:0]), 
+                      .cin(XLXN_3), 
+                      .cout(cout), 
+                      .sum(o[31:0]));
+   GND XLXI_3 (.G(XLXN_3));
+endmodule

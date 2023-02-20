@@ -1,0 +1,4 @@
+verilog work "or_8bitw.vf"
+verilog work "or_32bitwise.vf"
+verilog work "or_32bitwise_tb.v"
+verilog work "/opt/Xilinx/10.1/ISE/verilog/src/glbl.v"

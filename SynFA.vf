@@ -1,0 +1,76 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : SynFA.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:25
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/SynFA.sch SynFA.vf
+//Design Name: SynFA
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module SynFA(a, 
+             b, 
+             cin, 
+             clk, 
+             cout, 
+             sum);
+
+    input a;
+    input b;
+    input cin;
+    input clk;
+   output cout;
+   output sum;
+   
+   wire XLXN_7;
+   wire XLXN_11;
+   wire XLXN_17;
+   wire XLXN_19;
+   wire XLXN_21;
+   wire XLXN_22;
+   wire XLXN_23;
+   
+   AND2 XLXI_1 (.I0(XLXN_17), 
+                .I1(XLXN_19), 
+                .O(XLXN_21));
+   AND2 XLXI_2 (.I0(cin), 
+                .I1(XLXN_17), 
+                .O(XLXN_22));
+   AND2 XLXI_3 (.I0(cin), 
+                .I1(XLXN_19), 
+                .O(XLXN_23));
+   OR3 XLXI_4 (.I0(XLXN_23), 
+               .I1(XLXN_22), 
+               .I2(XLXN_21), 
+               .O(cout));
+   XOR2 XLXI_5 (.I0(XLXN_17), 
+                .I1(XLXN_19), 
+                .O(XLXN_11));
+   XOR2 XLXI_6 (.I0(cin), 
+                .I1(XLXN_11), 
+                .O(XLXN_7));
+   FD XLXI_7 (.C(clk), 
+              .D(a), 
+              .Q(XLXN_19));
+   defparam XLXI_7.INIT = 1'b0;
+   FD XLXI_8 (.C(clk), 
+              .D(b), 
+              .Q(XLXN_17));
+   defparam XLXI_8.INIT = 1'b0;
+   FD XLXI_9 (.C(clk), 
+              .D(XLXN_7), 
+              .Q(sum));
+   defparam XLXI_9.INIT = 1'b0;
+endmodule

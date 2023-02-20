@@ -1,0 +1,59 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 10.1
+//  \   \         Application : sch2verilog
+//  /   /         Filename : faddsch.vf
+// /___/   /\     Timestamp : 01/22/2023 23:50:25
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: /opt/Xilinx/10.1/ISE/bin/lin64/unwrapped/sch2verilog -intstyle ise -family spartan3a -w /home/shahid/Project3/Project3/faddsch.sch faddsch.vf
+//Design Name: faddsch
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module faddsch(A, 
+               B, 
+               Cin, 
+               Cout, 
+               Sum);
+
+    input A;
+    input B;
+    input Cin;
+   output Cout;
+   output Sum;
+   
+   wire NET1;
+   wire NET2;
+   wire NET3;
+   wire NET4;
+   
+   XOR2 XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(NET1));
+   AND2 XLXI_2 (.I0(B), 
+                .I1(A), 
+                .O(NET2));
+   AND2 XLXI_3 (.I0(Cin), 
+                .I1(A), 
+                .O(NET3));
+   AND2 XLXI_4 (.I0(Cin), 
+                .I1(B), 
+                .O(NET4));
+   XOR2 XLXI_5 (.I0(Cin), 
+                .I1(NET1), 
+                .O(Sum));
+   OR3 XLXI_6 (.I0(NET4), 
+               .I1(NET3), 
+               .I2(NET2), 
+               .O(Cout));
+endmodule
